@@ -10,6 +10,7 @@
     z-index:2000;
     transition:all .3s;
 
+
     &:target{
         visibility: visible;
         opacity:1;
@@ -74,5 +75,31 @@
     &:target &__content{
         opacity:1;
         transform: translate(-50%,-50%) scale(1);
+    }
+
+    @media only screen and (max-width:75em){
+        &__content{
+            display:flex!important;
+            flex-direction: column-reverse !important;
+            &-left{
+                width: 100%!important;
+                display: flex!important;
+                flex-direction: row!important;
+                justify-content: space-evenly!important;
+            }
+
+            &-right{
+                width:100%!important;
+                display:block!important;
+                .btn{
+                    font-size:.8rem!important;
+                }
+            }
+        }
+
+        &__img{
+            display: block!important;
+            width:50%!important;
+        }
     }
 }
